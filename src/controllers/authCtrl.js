@@ -1,10 +1,10 @@
 //  Aca va toda la logica y conexion con la base de datos
-// const User = require('../../models/user.model')
-// const bcrypt = require('bcryptjs')
-// const jwt = require('jsonwebtoken')
-// require('dotenv').config()
-// const { TOKEN_SECRET } = process.env
-// const transporter = require('../../utils/mailer')
+const User = require('../models/user')
+const bcrypt = require('bcryptjs')
+const jwt = require('jsonwebtoken')
+require('dotenv').config()
+const { TOKEN_SECRET } = process.env
+const transporter = require('../utils/mailer')
 
 
 module.exports = {
@@ -18,47 +18,47 @@ module.exports = {
         const savedUser = await newUser.save()
 
         //-----------------------------------------------------------------------------------
-        await transporter.sendMail({
-            from: '"Rick & Morty App" <arcancode@gmail.com>',
-            to: email,
-            subject: "¡Bienvenido a Rick & Morty App! ✔",
-            html: `
-                <html>
-                    <head>
-                        <style>
-                            body {
-                                font-family: 'Arial', sans-serif;
-                                background-color: #f0f0f0;
-                                color: #333;
-                            }
-                            .container {
-                                max-width: 600px;
-                                margin: 20px auto;
-                                padding: 20px;
-                                background-color: #fff;
-                                border-radius: 8px;
-                                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-                            }
-                            h1 {
-                                color: #4285f4;
-                            }
-                            p {
-                                line-height: 1.6;
-                            }
-                        </style>
-                    </head>
-                    <body>
-                        <div class="container">
-                            <h1>¡Bienvenido a Rick & Morty App!</h1>
-                            <p>Hola,</p>
-                            <p>Estamos emocionados de tenerte como parte de nuestra comunidad. Explora nuestro universo de personajes y disfruta de todas las funcionalidades que ofrecemos.</p>
-                            <p>¡Gracias por unirte!</p>
-                            <p>Atentamente,<br>Jonny Fernandez (Full Stack Developer) <br> LinkedIn: ${"https://www.linkedin.com/in/jonathan-fernandez-65a959277/"} <br> Github: ${"https://github.com/JonnyFernandez"} <br> Portfolio: ${"https://portfolio-t79v.vercel.app/"} </p>
-                        </div>
-                    </body>
-                </html>
-            `,
-        });
+        // await transporter.sendMail({
+        //     from: '"Rick & Morty App" <arcancode@gmail.com>',
+        //     to: email,
+        //     subject: "¡Bienvenido a Rick & Morty App! ✔",
+        //     html: `
+        //         <html>
+        //             <head>
+        //                 <style>
+        //                     body {
+        //                         font-family: 'Arial', sans-serif;
+        //                         background-color: #f0f0f0;
+        //                         color: #333;
+        //                     }
+        //                     .container {
+        //                         max-width: 600px;
+        //                         margin: 20px auto;
+        //                         padding: 20px;
+        //                         background-color: #fff;
+        //                         border-radius: 8px;
+        //                         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        //                     }
+        //                     h1 {
+        //                         color: #4285f4;
+        //                     }
+        //                     p {
+        //                         line-height: 1.6;
+        //                     }
+        //                 </style>
+        //             </head>
+        //             <body>
+        //                 <div class="container">
+        //                     <h1>¡Bienvenido a Rick & Morty App!</h1>
+        //                     <p>Hola,</p>
+        //                     <p>Estamos emocionados de tenerte como parte de nuestra comunidad. Explora nuestro universo de personajes y disfruta de todas las funcionalidades que ofrecemos.</p>
+        //                     <p>¡Gracias por unirte!</p>
+        //                     <p>Atentamente,<br>Jonny Fernandez (Full Stack Developer) <br> LinkedIn: ${"https://www.linkedin.com/in/jonathan-fernandez-65a959277/"} <br> Github: ${"https://github.com/JonnyFernandez"} <br> Portfolio: ${"https://portfolio-t79v.vercel.app/"} </p>
+        //                 </div>
+        //             </body>
+        //         </html>
+        //     `,
+        // });
 
         //-----------------------------------------------------------------------------------
 

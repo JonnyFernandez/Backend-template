@@ -37,6 +37,12 @@ use store
 db.createColection("prod")
 ```
 
+- Ver todas las colecciones:
+
+```
+show collections
+```
+
 - Insertar datos a coleccción:
 
 ```

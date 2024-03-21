@@ -1,6 +1,6 @@
-// const jwt = require('jsonwebtoken') //instalar 
+const jwt = require('jsonwebtoken') //instalar 
 // require('dotenv').config() // instalar dotenv i crear el archivo .env 
-// const { TOKEN_SECRET } = process.env;
+const { TOKEN_SECRET } = process.env;
 
 
 const createAccesToken = (payload) => {
