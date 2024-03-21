@@ -7,7 +7,7 @@ const connectDB = async () => {
         console.log(">>> DB 'Store' connected");
     } catch (error) {
         console.log(error);
-    }
+    };
 };
 
-module.exports = connectDB
+module.exports = connectDB;
