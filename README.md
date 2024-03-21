@@ -25,39 +25,107 @@
 
 ### Comandos de mongo en base de datos (terminal mongosh)
 
-- Crear Base de datos: > **`use store`**
+- Crear Base de datos:
 
-- Crear coleccion: `db.createColection("prod")`
+```
+use store
+```
 
-- Insertar datos a coleccción: `db.prod.insertOne({"name": "keyboard"}) `
+- Crear colección:
 
-- Listar documentos de una colección: `db.prod.find().pretty()`
+```
+db.createColection("prod")
+```
 
-- Agregar varios documentos a una colección: `db.name-collection.insert([{"name":"mouse","descrip":"gaminig","tags":["computado", "gadsdsmi"], "create_at":new Date()},{"name":"monitor","descrio":"LG", "tags":["compu", "gami"], "create_at":new Date() }])`
+- Insertar datos a coleccción:
 
-- Buscar documento por atributo: `db.prod.find({name:"mouse"})`
+```
+db.prod.insertOne({"name": "keyboard"})
+```
 
-- Buscar documentos por varios atributos: `db.prod.find({"tags":"compu", "name":"monitor"})`
+- Listar documentos de una colección:
 
-- Buscar y quedarme con el primero que me salga: `db.prod.findOne({"tags":"computado"} `
+```
+db.prod.find().pretty()
+```
 
-- Condicionar resultado: `db.prod.findOne({"tags":"computado"}, {"name":1, "descrip":1})`
+- Agregar varios documentos a una colección:
 
-- Omitir id en el resultado:` db.prod.findOne({"tags":"computado"}, {"name":1, "descrip":1, "_id":0})`
+```
+db.name-collection.insert([{"name":"mouse","descrip":"gaminig","tags":["computado", "gadsdsmi"], "create_at":new Date()},{"name":"monitor","descrio":"LG", "tags":["compu", "gami"], "create_at":new Date() }])
+```
 
-- Resultados ordenados alfabeticamente: `db.prod.find({"tags":"compu"}).sort({name:1})`
+- Buscar documento por atributo:
 
-- Limitar busqueda a cierta cantidad: `db.prod.find({"tags":"compu"}).limit(5)`
+```
+db.prod.find({name:"mouse"})
+```
 
-- Contar cantidad de documentos en una colección: `db.prod.countDocuments()`
+- Buscar documentos por varios atributos:
 
-- Jugamos un js: `db.prod.find().forEach(item=> print("Prod Name: " + item.name)) `
+```
+db.prod.find({"tags":"compu", "name":"monitor"})
+```
 
-- Agregarle atributo a un documento: `db.prod.update({"price":99.99}, { $set: { "hobie":"chess" } }) `
+- Buscar y quedarme con el primero que me salga:
 
-- Agregarle varios atributo a un documento: `db.prod.update({"price":99.99}, { $set: { "hobie":"chess", "job":"lazi" } }) `
+```
+ db.prod.findOne({"tags":"computado"}
+```
 
-- Actualizando un atributo indefinido (findOrCreate): `db.prod.update({"name":"desktop"}, { $set: { "description":"gamin Desktop", "job":"lazi" }}, {upsert:true})`
+- Condicionar resultado:
+
+```
+db.prod.findOne({"tags":"computado"}, {"name":1, "descrip":1})
+```
+
+- Omitir id en el resultado:
+
+```
+db.prod.findOne({"tags":"computado"}, {"name":1, "descrip":1, "_id":0})
+```
+
+- Resultados ordenados alfabéticamente:
+
+```
+db.prod.find({"tags":"compu"}).sort({name:1})
+```
+
+- Limitar busqueda a cierta cantidad:
+
+```
+db.prod.find({"tags":"compu"}).limit(5)
+```
+
+- Contar cantidad de documentos en una colección:
+
+```
+db.prod.countDocuments()
+```
+
+- Jugamos un js:
+
+```
+db.prod.find().forEach(item=> print("Prod Name: " + item.name))
+```
+
+- Agregarle atributo a un documento:
+
+```
+db.prod.update({"price":99.99}, { $set: { "hobie":"chess" } })
+```
+
+- Agregarle varios atributo a un documento:
+
+```
+db.prod.update({"price":99.99}, { $set: { "hobie":"chess", "job":"lazi" } })
+```
+
+- Actualizando un atributo indefinido (findOrCreate):
+
+```
+db.prod.update({"name":"desktop"}, { $set: { "description":"gamin Desktop", "job":"lazi" }}, {upsert:true})
+```
 
 - Incrementar valor numerico a un atributo:
 
@@ -66,11 +134,23 @@ db.prod.update({"name":"keyboard"},{ $inc:{"price": 5} }) => aumentar
 db.prod.update({"name":"keyboard"},{ $inc:{"price":-5} }) => restar
 ```
 
-- Renombrar propiedades: `db.prod.update({"name":"mouse"},{$rename:{"name":"apodo"}})`
+- Renombrar propiedades:
 
-- Eliminar documento de colección: `db.prod.remove({"name":"keyboard"})`
+```
+db.prod.update({"name":"mouse"},{$rename:{"name":"apodo"}})
+```
 
-- Eliminar todos los documentos de una coleccion: `db.prod.remove({})`
+- Eliminar documento de colección:
+
+```
+db.prod.remove({"name":"keyboard"})
+```
+
+- Eliminar todos los documentos de una colección:
+
+```
+db.prod.remove({})
+```
 
 #### En caso que trabajes con PostgreSQL
 
