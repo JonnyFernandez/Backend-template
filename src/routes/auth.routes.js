@@ -1,8 +1,8 @@
-// const { Router } = require('express'); //instala expres
+const { Router } = require('express');
 const { registerSchema, loginSchema } = require('../schemas/auth.schema');
-const validateSchema = require('../middlewares/validator.Middleware');
+const validateSchema = require('../middleware/validator.Middleware');
 const handler = require('../handlers/authHandler');
-const validateToken = require('../middlewares/validateToken');
+const validateToken = require('../middleware/validateToken');
 
 require('../schemas/auth.schema')
 
