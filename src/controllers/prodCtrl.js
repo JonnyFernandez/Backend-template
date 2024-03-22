@@ -1,4 +1,4 @@
-// importar los modelos aca
+// importar modelos
 
 module.exports = {
     getProd: (name) => {
@@ -23,4 +23,4 @@ module.exports = {
     deleteProd: (id) => {
         return `eliminamos el prod que tiene el id: ${id}`
     }
-}
+};
