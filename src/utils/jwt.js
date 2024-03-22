@@ -19,4 +19,4 @@ const createAccesToken = (payload) => {
 }
 
 
-module.exports = { createAccesToken }
+module.exports = { createAccesToken };

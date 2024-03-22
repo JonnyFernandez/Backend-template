@@ -162,3 +162,60 @@ db.prod.remove({})
 
 - [Sequelize](https://www.npmjs.com/package/sequelize) //es un ORM para Nodejs que nos permite manipular varias bases de datos SQL de una manera bastante sencilla, entre estas bases de datos podemos encontrar: mysql, sqlite, postgres, mssql
 - [pg](https://www.npmjs.com/package/pg) // Sequelize proporciona la funcionalidad ORM y la interfaz para interactuar con tu base de datos, mientras que el paquete pg proporciona la conexión a la base de datos PostgreSQL y las funciones necesarias para ejecutar las consultas SQL generadas por Sequelize.
+
+## Consultas a la DB
+
+### Buscar prod por su codigo
+
+- GET: `http://localhost:3001/api/prod/code/123`
+
+### Buscar prod por su nombre
+
+- GET: `http://localhost:3001/api/prod?name=pepe`
+
+### Buscar prod por su id
+
+- GET: `http://localhost:3001/api/prod/456`
+
+### crear prod
+
+- POST: `http://localhost:3001/api/prod/`
+
+```
+Envio por body la informacion
+{
+  "name":"Jhon travolta",
+  "description":"lo que tu quieras",
+  "code":"123456",
+  "price":123456
+}
+
+```
+
+### Actualizamos prod
+
+- PUT: `http://localhost:3001/api/prod/2`
+
+```
+por body envio los cambios deseados
+{
+  "name":"Jhon travolta",
+  "description":"lo que tu quieras",
+  "code":"123456",
+  "price":123456
+}
+
+```
+
+### Remover prod
+
+- DELETE: `http://localhost:3001/api/prod/2`
+
+## Archivo .env
+
+```
+PORT = 3001
+TOKEN_SECRET = agregar un UUID
+USER_Gmail =
+PASS_Gmail
+```

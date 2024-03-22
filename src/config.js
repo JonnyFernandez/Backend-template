@@ -1,1 +1,0 @@
-// converti en .env y poner las variables de entorno
