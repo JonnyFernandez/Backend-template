@@ -1,4 +1,6 @@
 // importar modelos
+const Prod = require('../models/Prod')
+
 
 module.exports = {
     getProd: (name) => {

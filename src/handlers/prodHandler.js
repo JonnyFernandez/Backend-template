@@ -30,9 +30,9 @@ module.exports = {
         }
     },
     createProd: (req, res) => {
-        const { name, description, code, price } = req.body;
+        const { name, description, code, price, image } = req.body;
         try {
-            const aux = controller.createProd(name, description, code, price)
+            const aux = controller.createProd(name, description, code, price, image)
             res.status(200).json(aux)
         } catch (error) {
             res.status(400).json({ message: [error.message] })
